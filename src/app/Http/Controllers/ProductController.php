@@ -18,7 +18,7 @@ class ProductController extends Controller
 
       public function store(ProductRequest $request)
       {
-        $product = $request->only(['category_id', 'product_name']);
+        $product = $request->only(['category_id', 'product_name','price']);
         Product::create($product);
         return redirect('/')->with('message', '商品を登録しました');
       }
