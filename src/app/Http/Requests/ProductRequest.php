@@ -25,7 +25,9 @@ class ProductRequest extends FormRequest
     {
         return [
             //
-            'product_name' => ['required', 'string', 'max:20']
+            'product_name' => ['required', 'string', 'max:20','unique:products'],        
+            'price' => ['required', 'numeric', 'min:1'],
+            'category_id' => ['required'],
         ];
     }
 
@@ -36,6 +38,10 @@ class ProductRequest extends FormRequest
              'product_name.required' => '商品名を入力してください',
              'product_name.string' => '商品名を文字列で入力してください',
              'product_name.max' => '商品名を20文字以下で入力してください',
+             'price.required' => '価格を入力してください',
+             'price.min' => '価格は1円以上で入力してください',
+             'category_id.required' => 'カテゴリーを選んでください',
+             'product_name.unique' => '商品が既に存在しています',
          ];
      }
 }

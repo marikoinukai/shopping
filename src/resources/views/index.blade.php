@@ -89,7 +89,8 @@
       <tr class="product-table__row">
         <th class="product-table__header">
          <span class="product-table__header-span">商品</span>
-         <span class="product-table__header-span">カテゴリ</span> 
+         <span class="product-table__header-span2">価格(円)</span> 
+         <span class="product-table__header-span3">カテゴリ</span> 
        </th>
       </tr>
       @foreach ($products as $product)
@@ -106,6 +107,15 @@
                     value="{{ $product['product_name'] }}"
                   />
                  <input type="hidden" name="id" value="{{ $product['id'] }}"/>
+            </div>
+            <div class="update-form__item">
+                  <input 
+                    class="update-form__item-input2" 
+                    type="number" 
+                    name="price" 
+                    value="{{ $product['price'] }}"
+                  />
+                 <!-- <input type="hidden" name="id" value="{{ $product['id'] }}"/> -->
             </div>
             <div class="update-form__item">
              <p class="update-form__itme-p">{{ $product['category']['name'] }}</p>

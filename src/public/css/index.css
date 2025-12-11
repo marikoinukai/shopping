@@ -2,7 +2,7 @@
     padding: 10px 30px;
     border-color: #badbcc;
     background-color: #d1e7dd;
-    color: #0f5132;
+    color: #312093e7;
 }
 
 .product__alert--danger {
@@ -90,7 +90,7 @@
     height: 40px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #050b59;
     color: #fff;
     cursor: pointer;
 }
@@ -98,8 +98,7 @@
 .product-table {
     margin: 30px auto;
     width: 70%;
-    /* text-align: left; */
-    text-align: center;
+    text-align: left;
 }
 
 .product-table__inner {
@@ -118,8 +117,15 @@
 }
 
 .product-table__header-span {
-    margin-right: 40%;
-    
+    margin-right: 28%;
+}
+
+.product-table__header-span2 {
+    margin-right: 20%;
+}
+
+.product-table__header-span3 {
+    margin-right: 15%;
 }
 
 .product-table__item:first-of-type {
@@ -144,36 +150,44 @@
     border: none;
 }
 
+.update-form__item-input2 {
+    width: 30%;
+    outline: none;
+    border: none;
+    text-align: right;
+    /* font-family: monospace, sans-serif; */
+}
+
 .update-form__item-p {
     text-align: left;
     font-size: 13px;
     
 }
 
-.update-form__button {
+/* .update-form__button {
     width: 50px;
-}
+} */
 
 .update-form__button-submit {
     padding: 5px;
-    width: 100%;
+    width: 50px;
     border: none;
     border-radius: 3px;
-    background: #0000ff;
+    background: #0080ff;
     color: #fff;
     cursor: pointer;
 }
 
-.delete-form__button {
+/* .delete-form__button {
     width: 50px;
-}
+} */
 
 .delete-form__button-submit {
     padding: 5px;
-    width: 100%;
+    width: 50px;
     border: none;
     border-radius: 3px;
-    background: #ff0000;
+    background: #ff0051;
     color: #fff;
     cursor: pointer;
 }

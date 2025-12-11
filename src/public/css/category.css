@@ -52,7 +52,7 @@
     height: 40px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #050b59;
     color: #fff;
     cursor: pointer;
 }
@@ -109,7 +109,7 @@
     width: 100%;
     border: none;
     border-radius: 3px;
-    background: #0000ff;
+    background: #0080ff;
     color: #fff;
     cursor: pointer;
 }
@@ -123,7 +123,7 @@
     width: 100%;
     border: none;
     border-radius: 3px;
-    background: #ff0000;
+    background: #ff0051;
     color: #fff;
     cursor: pointer;
 }
