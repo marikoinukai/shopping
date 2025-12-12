@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ShopController;
 
 Route::get('/', [ProductController::class, 'index']);
 Route::post('/products', [ProductController::class, 'store']);
@@ -13,3 +14,4 @@ Route::post('/categories', [CategoryController::class, 'store']);
 Route::patch('/categories/update', [CategoryController::class, 'update']);
 Route::get('/products/search', [ProductController::class, 'search']);
 Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
+Route::get('/shop', [ShopController::class, 'index']);
