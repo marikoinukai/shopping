@@ -31,4 +31,12 @@ public function scopeKeywordSearch($query, $keyword)
   }
    return $query;
 }
+
+public function scopePriceSearch($query, $price)
+{
+  if (!empty($price)) {
+    $query->where('price', $price);
+  }
+   return $query;
+}
 }

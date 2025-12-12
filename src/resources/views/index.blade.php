@@ -69,7 +69,7 @@
      <input class="search-form__item-input" type="text" name="keyword" value="{{ old('keyword') }}"
      placeholder="例: 牛乳">
      <label for="price" class="create-form__label">価格</label>
-     <input class="search-form__item-input2" type="number" name="keyword" value="{{ old('keyword') }}"
+     <input class="search-form__item-input2" type="number" name="price" value="{{ old('price') }}"
      placeholder="例: 350">
      <select class="search-form__item-select" name="category_id">
        <option value="">カテゴリ</option>

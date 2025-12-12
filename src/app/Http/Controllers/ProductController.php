@@ -38,9 +38,12 @@ class ProductController extends Controller
 
       public function search(Request $request)
       {
-        $products = Product::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)->get();
+        $products = Product::with('category')->CategorySearch($request->category_id)->KeywordSearch($request->keyword)
+        ->PriceSearch($request->price)
+        ->get();
         $categories = Category::all();
 
         return view('index', compact('products', 'categories'));
+
       }
 }
