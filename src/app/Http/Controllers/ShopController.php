@@ -12,8 +12,8 @@ class ShopController extends Controller
       public function index()
     {
       $shops = Shop::with('product')->get();
-      $shops = Category::all();
-      $shops = Product::all();
-      return view('index', compact('shops', 'products'));
+      $categories = Category::all();
+      $products = Product::all();
+      return view('shop', compact('categories','products'));
     }
 }

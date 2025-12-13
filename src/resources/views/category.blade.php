@@ -22,10 +22,13 @@
   @endif
 </div>
 <div class="category__content">
+   <div class="section__title">
+   <h2>カテゴリ登録</h2>
+ </div>
   <form class="create-form" action="/categories"          method="post">
      @csrf
     <div class="create-form__item">
-       <input class="create-form__item-input" type="text" name="name" value="{{ old('name') }}">
+       <input class="create-form__item-input" type="text" name="name" value="{{ old('name') }}" placeholder="例: 食料品">
     </div>
     <div class="create-form__button">
       <button class="create-form__button-submit" type="submit">登録</button>
@@ -34,7 +37,7 @@
   <div class="category-table">
     <table class="category-table__inner">
       <tr class="category-table__row">
-        <th class="category-table__header">category</th>
+        <th class="category-table__header">登録済みカテゴリ</th>
       </tr>
       @foreach ($categories as $category)
       <tr class="category-table__row">

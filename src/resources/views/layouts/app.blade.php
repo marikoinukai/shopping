@@ -15,11 +15,11 @@
   <header class="header">
     <div class="header__inner">
       <div class="header-utilities">
-        <a class="header__logo" href="/">Shopping</a>
+        <a class="header__logo" href="/">商品設定</a>
         <nav>
          <ul class="header-nav">
            <li class="header-nav__item">
-            <a class="header-nav__link" href="/categories">カテゴリ一覧</a>
+            <a class="header-nav__link" href="/categories">カテゴリ設定</a>
            </li>
          </ul>
         </nav>
