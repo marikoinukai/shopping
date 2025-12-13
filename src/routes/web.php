@@ -15,3 +15,5 @@ Route::patch('/categories/update', [CategoryController::class, 'update']);
 Route::get('/products/search', [ProductController::class, 'search']);
 Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
 Route::get('/shop', [ShopController::class, 'index']);
+Route::post('/shop', [ShopController::class, 'store']);
+Route::delete('/shop/delete', [ShopController::class, 'destroy']);

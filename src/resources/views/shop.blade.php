@@ -49,26 +49,34 @@
    <div class="section__title">
    <h2>購入商品</h2>
  </div>
-  <form class="create-form" action="/products" method="post">
+  <form class="create-form" action="/shop" method="post">
   @csrf
     <div class="create-form__item">
 
-      <select class="create-form__item-select" name="category_id">
+      <!-- <select class="create-form__item-select" name="category_id">
            <option value="">カテゴリ</option>
              @foreach ($categories as $category)
                  <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
              @endforeach
-      </select>
+      </select> -->
 
       <label for="product_name" class="create-form__label">商品</label>
-      <input 
+      <select class="create-form__item-input" name="product_id">
+    <option value="">商品を選択してください</option>
+    @foreach ($products as $product)
+        <option value="{{ $product['id'] }}">
+            {{ $product['product_name'] }} ({{ number_format($product['price']) }}円)
+        </option>
+    @endforeach
+</select>
+      <!-- <input 
         class="create-form__item-input" 
         type="text" 
         name="product_name"
         value="{{ old('product_name') }}"
-        placeholder="例: 牛乳">
+        placeholder="例: 牛乳"> -->
 
-      <label for="price" class="create-form__label">数量</label>
+      <label for="quantity" class="create-form__label">数量</label>
       <input 
         class="create-form__item-input2" 
         type="number" 
@@ -87,23 +95,23 @@
     </form>
     
 
-    <form class="create-form2" action="/products" method="post">
+    <!-- <form class="create-form" action="/shop" method="post">
     <div class="create-form__item">
-      <label for="price" class="create-form__label">価格(円)</label>
+      <label for="price" class="create-form__label">価格</label>
       <input 
-        class="create-form__item-input2" 
+        class="create-form__item-input2 " 
         type="number" 
         name="price">
-
-      <label for="price" class="create-form__label">合計(円)</label>
+      <span class="input-unit">円</span>
+      <label for="price" class="create-form__label">合計</label>
       <input 
-        class="create-form__item-input2" 
+        class="create-form__item-input2 " 
         type="number" 
-        name="price">
-        
+        name="subtotal">
+        <span class="input-unit">円</span>        
 
     </div>
-  </form>
+  </form> -->
   <div class="section__title">
    <h2>カートの商品</h2>
  </div>
@@ -134,15 +142,15 @@
       <tr class="product-table__row">
         <th class="product-table__header">
          <span class="product-table__header-span2">商品</span>
-         <span class="product-table__header-span3">価格(円)</span> 
-         <span class="product-table__header-span2">数量</span> 
+         <span class="product-table__header-span5">価格(円)</span> 
+         <span class="product-table__header-span5">数量</span> 
          <span class="product-table__header-span4">合計(円)</span> 
        </th>
       </tr>
-      @foreach ($products as $product)
+      @foreach ($shops as $shop)
       <tr class="product-table__row">
         <td class="product-table__item">
-          <form class="update-form" action="/products/update" method="POST">
+          <form class="update-form" action="/shop" method="POST">
               @method('PATCH')
               @csrf
             <div class="update-form__item">
@@ -150,7 +158,7 @@
                     class="update-form__item-input" 
                     type="text" 
                     name="product_name" 
-                    value="{{ $product['product_name'] }}"
+                    value="{{ $shop['product']['product_name'] }}"
                   />
                  <input type="hidden" name="id" value="{{ $product['id'] }}"/>
             </div>
@@ -159,14 +167,31 @@
                     class="update-form__item-input2" 
                     type="number" 
                     name="price" 
-                    value="{{ $product['price'] }}"
+                    value="{{ $shop['product']['price'] }}"
                   />
                  </div>
             <div class="update-form__item">
-             <p class="update-form__itme-p">{{ $product['category']['name'] }}</p>
+
+<input 
+                    class="update-form__item-input2" 
+                    type="number" 
+                    name="quantity" 
+                    value="{{ $shop['quantity']}}"
+                  />
+
+
+             <!-- <p class="update-form__itme-p">{{ $shop['quantity']}}</p> -->
            </div>
            <div class="update-form__item">
-             <p class="update-form__itme-p">{{ $product['category']['name'] }}</p>
+
+            <input 
+                    class="update-form__item-input2" 
+                    type="number" 
+                    name="quantity" 
+                    value="{{ $shop['subtotal']}}"
+                  />
+
+             <!-- <p class="update-form__item-p">{{ $shop['subtotal']}}</p> -->
            </div>
             <!-- <div class="update-form__button">
               <button class="update-form__button-submit" type="submit">
@@ -176,11 +201,11 @@
           </form>
         </td>
         <td class="product-table__item">
-          <form class="delete-form" action="/products/delete" method="POST">
+          <form class="delete-form" action="/shop/delete" method="POST">
               @method('DELETE')
               @csrf
             <div class="delete-form__button">
-               <input type="hidden" name="id" value="{{ $product['id'] }}">
+               <input type="hidden" name="id" value="{{$shop['id'] }}">
               <button class="delete-form__button-submit" type="submit">
                 削除
               </button>
