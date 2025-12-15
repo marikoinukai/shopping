@@ -7,36 +7,37 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    use HasFactory;
+  use HasFactory;
         protected $fillable = [
             'category_id',
             'product_name',
             'price'];
-        public function category()
+            
+  public function category()
    {
         return $this->belongsTo(Category::class);
    }
 
-   public function scopeCategorySearch($query, $category_id)
-{
-  if (!empty($category_id)) {
-    $query->where('category_id', $category_id);
+  public function scopeCategorySearch($query, $category_id)
+  {
+    if (!empty($category_id)) {
+      $query->where('category_id', $category_id);
+    }
   }
-}
 
-public function scopeKeywordSearch($query, $keyword)
-{
-  if (!empty($keyword)) {
-    $query->where('product_name', 'like', '%' . $keyword . '%');
+  public function scopeKeywordSearch($query, $keyword)
+  {
+    if (!empty($keyword)) {
+      $query->where('product_name', 'like', '%' . $keyword . '%');
+    }
+    return $query;
   }
-   return $query;
-}
 
-public function scopePriceSearch($query, $price)
-{
-  if (!empty($price)) {
-    $query->where('price', $price);
+  public function scopePriceSearch($query, $price)
+  {
+    if (!empty($price)) {
+      $query->where('price', $price);
+    }
+    return $query;
   }
-   return $query;
-}
 }

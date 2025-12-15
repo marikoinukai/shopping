@@ -99,20 +99,20 @@
     white-space: nowrap;
 }
 
-.input-unit{
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: #333;
-        font-size: 0.9rem;
-        width: auto;
-        min-width: 30px;
-        font-weight: bold;
-        margin-left: 5px;
-        margin-right: 3px;
-        text-align: left;
-        white-space: nowrap;
-    }
+.input-unit {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.9rem;
+    width: auto;
+    min-width: 30px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-right: 3px;
+    text-align: left;
+    white-space: nowrap;
+}
 
 
 .create-form__item-input,
@@ -267,4 +267,3 @@
     color: #fff;
     cursor: pointer;
 }
-

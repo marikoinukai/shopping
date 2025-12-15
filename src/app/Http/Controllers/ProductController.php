@@ -9,7 +9,7 @@ use App\Models\Category;
 
 class ProductController extends Controller
 {
-       public function index()
+      public function index()
       {
         $products = Product::with('category')->get();
         $categories = Category::all();
@@ -42,8 +42,6 @@ class ProductController extends Controller
         ->PriceSearch($request->price)
         ->get();
         $categories = Category::all();
-
         return view('index', compact('products', 'categories'));
-
       }
 }

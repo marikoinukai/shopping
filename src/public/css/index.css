@@ -21,6 +21,7 @@
     padding: 30px 15px;
     max-width: 1230px;
 }
+
 .section__title {
     margin: 0 auto;
     width: 70%;
@@ -77,9 +78,9 @@
     height: 40px;
     border: 1px solid #ddd;
     border-radius: 3px;
-    appearance: none;
-    
+    appearance: none; 
 }
+
 .create-form__button, .search-form__button {
     width: 20%;
 }
@@ -155,18 +156,12 @@
     outline: none;
     border: none;
     text-align: right;
-    /* font-family: monospace, sans-serif; */
 }
 
 .update-form__item-p {
     text-align: left;
     font-size: 13px;
-    
 }
-
-/* .update-form__button {
-    width: 50px;
-} */
 
 .update-form__button-submit {
     padding: 5px;
@@ -177,10 +172,6 @@
     color: #fff;
     cursor: pointer;
 }
-
-/* .delete-form__button {
-    width: 50px;
-} */
 
 .delete-form__button-submit {
     padding: 5px;

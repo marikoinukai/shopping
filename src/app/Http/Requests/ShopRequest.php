@@ -27,17 +27,15 @@ class ShopRequest extends FormRequest
             //    
            'product_id' => ['required','integer','exists:products,id'],
            'quantity' => ['required', 'integer', 'min:1'],
-            
         ];
     }
 
-
-         public function messages()
-     {
-         return [
-             'product_id.required' => '商品を選択してください',
-             'quantity.required' => '数量を入力してください',
-             'quantity.min' => '数量は1以上で入力してください',
-         ];
-     }
+    public function messages()
+    {
+        return [
+            'product_id.required' => '商品を選択してください',
+            'quantity.required' => '数量を入力してください',
+            'quantity.min' => '数量は1以上で入力してください',
+        ];
+    }
 }
